@@ -7,7 +7,29 @@ A **Uei Café** é uma cafeteria real localizada na região de Franca SP...
 *(Para ver o cenário completo com atributos e relacionamentos, acesse [docs/cenario.md](docs/cenario.md))*
 
 ## 2. Modelagem Conceitual
-(em construção)
+
+A modelagem conceitual foi representada por meio do Diagrama Entidade-Relacionamento (DER), utilizando a notação *Crow's Foot* (Pé de Galinha) para demonstrar as cardinalidades. O diagrama abaixo ilustra as 7 entidades do sistema, seus atributos (simples, compostos e derivados), chaves e os relacionamentos.
+
+![Diagrama Entidade-Relacionamento - Uei Café](images/der.png)
+
+### 2.1 Explicação dos Relacionamentos e Cardinalidades
+
+Para atender aos requisitos do modelo, os relacionamentos foram definidos da seguinte forma:
+
+*   **Relacionamento 1:1 (Um para Um) — `Pedido` e `Pagamento`:** 
+    Cada pedido possui exatamente um pagamento associado, e cada pagamento pertence a um único pedido. Isso é garantido pela chave estrangeira `id_pedido` na tabela `pagamento` com a restrição `UNIQUE`.
+*   **Relacionamentos 1:N (Um para Muitos):**
+    *   **`Categoria` → `Produto`:** Uma categoria agrupa vários produtos, mas cada produto pertence a apenas uma categoria.
+    *   **`Cliente` → `Pedido`:** Um cliente pode realizar vários pedidos, mas cada pedido está vinculado a um único cliente.
+    *   **`Funcionario` → `Pedido`:** Um funcionário pode atender vários pedidos, mas cada pedido é registrado por um único funcionário.
+*   **Relacionamento N:N (Muitos para Muitos) — `Pedido` e `Produto`:**
+    Um pedido pode conter vários produtos, e um mesmo produto pode estar em vários pedidos. No modelo relacional, isso é resolvido pela entidade associativa **`ITEM_PEDIDO`**, que contém as chaves estrangeiras de ambos e o atributo `quantidade`.
+
+### 2.2 Classificação dos Atributos no DER
+*   **Atributos Compostos:** O endereço do cliente foi desmembrado em `end_rua`, `end_numero`, `end_bairro`, `end_cidade` e `end_cep`.
+*   **Atributos Derivados:** O `valor_total` do pedido (soma dos itens) e os `pontos_fidelidade` do cliente.
+*   **Chaves Primárias (PK):** Identificadas com o prefixo `id_` em todas as tabelas.
+*   **Chaves Estrangeiras (FK):** Identificadas nos campos que fazem ligação entre as tabelas.
 
 ## 3. Modelagem Lógica
 
