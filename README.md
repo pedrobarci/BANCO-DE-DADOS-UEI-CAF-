@@ -2,9 +2,39 @@
 
 ## 1. Cenário
 
-A **Uei Café** é uma cafeteria real localizada na região de Franca SP...
+### 1.1 Descrição da empresa
+A **Uei Café** é uma cafeteria de médio porte localizada na região central de Franca/SP, com uma unidade única e cerca de 15 funcionários. A empresa atua no ramo de cafés especiais, oferecendo bebidas quentes e geladas, salgados, doces e produtos de conveniência. Seu público é composto majoritariamente por trabalhadores do entorno, estudantes e moradores da região. A cafeteria possui um programa de fidelidade simples: cada compra acumula pontos que podem ser trocados por produtos. Os pedidos podem ser feitos no balcão, para consumo no local ou para viagem, e o pagamento é realizado em dinheiro, cartão de crédito, débito ou Pix.
 
-*(Para ver o cenário completo com atributos e relacionamentos, acesse [docs/cenario.md](docs/cenario.md))*
+### 1.2 Problema / necessidade
+Atualmente, a Uei Café controla suas operações com **planilhas manuais e cadernos de anotação**, o que gera diversos problemas:
+* **Perda de histórico de vendas** — não há registro confiável dos pedidos realizados.
+* **Dificuldade em controlar o cardápio** — preços e disponibilidade são atualizados manualmente, gerando erros.
+* **Programa de fidelidade inconsistente** — pontos são anotados em papel e frequentemente perdidos.
+* **Falta de controle sobre formas de pagamento** — não é possível saber qual meio de pagamento é mais usado.
+* **Ausência de integridade nos dados** — informações duplicadas de clientes e produtos são comuns.
+
+Diante desse cenário, a Uei Café precisa de um **banco de dados relacional** que centralize clientes, funcionários, produtos, pedidos, itens de pedido e pagamentos, garantindo integridade, consistência e suporte à geração de relatórios gerenciais.
+
+### 1.3 Entidades e Atributos
+O sistema é composto por **7 entidades**. Para atender aos requisitos do modelo, os atributos foram classificados da seguinte forma:
+
+* **Entidades:** Cliente, Funcionario, Categoria, Produto, Pedido, ItemPedido e Pagamento.
+* **Atributos Simples:** `nome`, `email`, `preco`, `status`, `cargo`, `salario`, entre outros.
+* **Atributos Compostos:** O endereço do cliente foi desmembrado em `end_rua`, `end_numero`, `end_bairro`, `end_cidade` e `end_cep`.
+* **Atributos Multivalorados:** O atributo `telefone` do cliente, pois um cliente pode ter mais de um número de contato.
+* **Atributos Derivados:** O `valor_total` do pedido (calculado a partir da soma dos itens) e os `pontos_fidelidade` do cliente (acumulados pelas compras).
+* **Chaves Primárias (PK):** Todas as tabelas possuem uma chave primária única (ex: `id_cliente`, `id_produto`, `id_pedido`).
+
+### 1.4 Relacionamentos e Cardinalidades
+Para atender a todos os tipos de relacionamento exigidos, o modelo foi estruturado da seguinte forma:
+* **Relacionamento 1:1 (Um para Um):** Um `Pedido` gera um único `Pagamento`, e um `Pagamento` pertence a um único `Pedido`.
+* **Relacionamentos 1:N (Um para Muitos):** 
+  * Um `Cliente` realiza vários `Pedidos`.
+  * Um `Funcionario` atende vários `Pedidos`.
+  * Uma `Categoria` agrupa vários `Produtos`.
+* **Relacionamento N:N (Muitos para Muitos):** Um `Pedido` pode conter vários `Produtos`, e um `Produto` pode estar em vários `Pedidos`. Esse relacionamento é resolvido pela entidade associativa **`ItemPedido`**.
+
+*(Nota: A representação visual completa dessas entidades, atributos e relacionamentos pode ser conferida no DER na Seção 2).*
 
 ## 2. Modelagem Conceitual
 
