@@ -124,13 +124,39 @@ Registra a forma e o valor pago de um pedido (Relacionamento 1:1 com Pedido).
 * `pagamento.id_pedido` aponta para `pedido.id_pedido` (1:1)
 
 ## 4. Modelagem Física
-(em construção)
+A implementação física do banco de dados foi realizada no SGBD PostgreSQL, utilizando a plataforma em nuvem **Supabase**. Foram criadas as 7 tabelas definidas no modelo lógico, com seus respectivos tipos de dados, restrições de integridade (`NOT NULL`, `UNIQUE`, `CHECK`) e chaves estrangeiras (`FOREIGN KEY`) configuradas com regras de exclusão e atualização em cascata (`ON DELETE CASCADE`) para garantir a integridade referencial do banco.
+
+Os scripts SQL de criação estão disponíveis na pasta `sql` deste repositório.
+
+### Evidências da Implementação no Supabase
+Abaixo estão as capturas de tela demonstrando a criação e a estrutura do banco no Supabase:
+
+![Visão Geral das Tabelas](images/supabase-tabelas/04-lista-tabelas.png)
 
 ## 5. Dados
-(em construção)
+Para a validação do banco de dados e realização de testes, o sistema foi populado com um volume significativo de dados coerentes com o cenário da cafeteria. Foram inseridos **500 registros em cada uma das 7 tabelas** (totalizando 3.500 registros), garantindo a unicidade das chaves primárias e o respeito às regras de negócio.
+
+A inserção foi realizada via script SQL para garantir agilidade e consistência. O script de povoamento está disponível em `sql/02_insert_dados.sql`.
+
+### Evidências do Povoamento
+**Execução do script e contagem dos dados:**
+![Execução do Script de Dados](images/dados/01-insert-executado.png)
+![Contagem de Registros](images/dados/02-contagem-tabelas.png)
 
 ## 6. CRUD
-(em construção)
+Para demonstrar o funcionamento prático do banco de dados, foram realizadas as quatro operações fundamentais de manipulação de dados (CRUD) diretamente no ambiente do Supabase (SQL Editor).
+
+### 6.1 Create (Inserção)
+![Operação de Insert](images/crud/01-insert.png)
+
+### 6.2 Read (Consulta)
+![Operação de Select](images/crud/02-select.png)
+
+### 6.3 Update (Atualização)
+![Operação de Update](images/crud/03-update.png)
+
+### 6.4 Delete (Exclusão)
+![Operação de Delete](images/crud/04-delete.png)
 
 ## 7. Relatórios
 
