@@ -10,7 +10,7 @@ A **Uei Café** é uma cafeteria real localizada na região de Franca SP...
 
 A modelagem conceitual foi representada por meio do Diagrama Entidade-Relacionamento (DER), utilizando a notação *Crow's Foot* (Pé de Galinha) para demonstrar as cardinalidades. O diagrama abaixo ilustra as 7 entidades do sistema, seus atributos (simples, compostos e derivados), chaves e os relacionamentos.
 
-![Diagrama Entidade-Relacionamento - Uei Café](images/der.png)
+![Diagrama Entidade-Relacionamento - Uei Café](images/der.png..png)
 
 ### 2.1 Explicação dos Relacionamentos e Cardinalidades
 
