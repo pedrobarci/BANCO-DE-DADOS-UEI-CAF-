@@ -3,7 +3,7 @@
 ## 1. Cenário
 
 ### 1.1 Descrição da Empresa
-A **Uei Café** é uma cafeteria recém-inaugurada este ano, localizada nas dependências de um shopping center. O negócio é gerido por duas sócias e nasceu com um conceito inovador e diferenciado: oferecer opções que atendem tanto ao público *fitness* (com bebidas e comidas saudáveis, autorizadas e validadas por diversos nutricionistas) quanto ao público que aprecia doces e cafés especiais. A empresa tem ganhado destaque e um fluxo crescente de clientes devido a fortes parcerias e divulgações feitas por influenciadores digitais.
+A **Uei Café** é uma cafeteria recém-inaugurada este ano, localizada nas dependências de um shopping center. O negócio é gerido por duas sócias e nasceu com um conceito inovador e diferenciado: oferecer opções que atendem tanto ao público *fitness* (com bebidas e comidas saudáveis, autorizadas e validadas por diversos nutricionistas) quanto ao público que aprecia doces e cafés especiais. A empresa tem ganhado destaque e um fluxo crescente de clientes devido a fortes parcerias e divulgações feitas por influenciadores digitais. Todos dados anexados no trabalho são fictícios . 
 
 ### 1.2 Problema / Necessidade
 Com o rápido crescimento desde a inauguração e a alta rotatividade de clientes (típica de shoppings), as sócias enfrentam dificuldades em gerenciar o negócio apenas com métodos manuais ou planilhas simples. Os principais problemas são:
