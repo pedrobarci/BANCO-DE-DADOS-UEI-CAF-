@@ -17,19 +17,21 @@ A modelagem conceitual foi representada por meio do Diagrama Entidade-Relacionam
 Para atender aos requisitos do modelo, os relacionamentos foram definidos da seguinte forma:
 
 *   **Relacionamento 1:1 (Um para Um) — `Pedido` e `Pagamento`:** 
-    Cada pedido possui exatamente um pagamento associado, e cada pagamento pertence a um único pedido. Isso é garantido pela chave estrangeira `id_pedido` na tabela `pagamento` com a restrição `UNIQUE`.
+    Cada pedido possui exatamente um pagamento associado, e cada pagamento pertence a um único pedido. No diagrama, isso é representado pelas cardinalidades `(1,1)` em ambas as pontas. No banco de dados, essa regra é garantida pela chave estrangeira `id_pedido` na tabela `pagamento` com a restrição `UNIQUE`.
 *   **Relacionamentos 1:N (Um para Muitos):**
-    *   **`Categoria` → `Produto`:** Uma categoria agrupa vários produtos, mas cada produto pertence a apenas uma categoria.
-    *   **`Cliente` → `Pedido`:** Um cliente pode realizar vários pedidos, mas cada pedido está vinculado a um único cliente.
-    *   **`Funcionario` → `Pedido`:** Um funcionário pode atender vários pedidos, mas cada pedido é registrado por um único funcionário.
+    *   **`Cliente` → `Pedido`:** Um cliente pode realizar zero ou vários pedidos `(0,N)`, mas cada pedido está vinculado a um único cliente `(1,1)`.
+    *   **`Funcionario` → `Pedido`:** Um funcionário pode atender zero ou vários pedidos `(0,N)`, mas cada pedido é registrado por um único funcionário `(1,1)`.
+    *   **`Categoria` → `Produto`:** Uma categoria agrupa zero ou vários produtos `(0,N)`, mas cada produto pertence a apenas uma categoria `(1,1)`.
 *   **Relacionamento N:N (Muitos para Muitos) — `Pedido` e `Produto`:**
-    Um pedido pode conter vários produtos, e um mesmo produto pode estar em vários pedidos. No modelo relacional, isso é resolvido pela entidade associativa **`ITEM_PEDIDO`**, que contém as chaves estrangeiras de ambos e o atributo `quantidade`.
+    Um pedido pode conter vários produtos, e um mesmo produto pode estar em vários pedidos. No modelo conceitual (DER), isso foi resolvido criando a entidade associativa **`ITEM_PEDIDO`**, que se conecta ao `Pedido` com cardinalidade `(1,N)` e ao `Produto` com cardinalidade `(1,1)` (ou `(0,N)` dependendo da regra de negócio adotada), pois ela armazena os atributos específicos da venda, como `quantidade` e `preco_unitario`.
 
 ### 2.2 Classificação dos Atributos no DER
-*   **Atributos Compostos:** O endereço do cliente foi desmembrado em `end_rua`, `end_numero`, `end_bairro`, `end_cidade` e `end_cep`.
-*   **Atributos Derivados:** O `valor_total` do pedido (soma dos itens) e os `pontos_fidelidade` do cliente.
-*   **Chaves Primárias (PK):** Identificadas com o prefixo `id_` em todas as tabelas.
-*   **Chaves Estrangeiras (FK):** Identificadas nos campos que fazem ligação entre as tabelas.
+
+*   **Atributos Compostos:** O endereço do cliente foi desmembrado em `end_rua`, `end_numero`, `end_bairro`, `end_cidade` e `end_cep` (representado no diagrama pela elipse "Endereço" que se ramifica em seus componentes).
+*   **Atributos Multivalorados:** O atributo `telefone` do cliente é multivalorado (representado no diagrama pela elipse com linha dupla), indicando que um cliente pode ter mais de um número de contato.
+*   **Atributos Derivados:** O `valor_total` do pedido (soma dos itens) e os `pontos_fidelidade` do cliente (representados no diagrama por elipses com linha tracejada).
+*   **Chaves Primárias (PK):** Identificadas com o prefixo `id_` em todas as tabelas e destacadas com texto sublinhado no diagrama.
+*   **Chaves Estrangeiras (FK):** Identificadas nos campos que fazem ligação entre as tabelas no modelo lógico (não são representadas como elipses no modelo conceitual, mas sim pelas linhas de relacionamento).
 
 ## 3. Modelagem Lógica
 
