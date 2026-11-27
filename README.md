@@ -124,14 +124,56 @@ Registra a forma e o valor pago de um pedido (Relacionamento 1:1 com Pedido).
 * `pagamento.id_pedido` aponta para `pedido.id_pedido` (1:1)
 
 ## 4. Modelagem Física
-A implementação física do banco de dados foi realizada no SGBD PostgreSQL, utilizando a plataforma em nuvem **Supabase**. Foram criadas as 7 tabelas definidas no modelo lógico, com seus respectivos tipos de dados, restrições de integridade (`NOT NULL`, `UNIQUE`, `CHECK`) e chaves estrangeiras (`FOREIGN KEY`) configuradas com regras de exclusão e atualização em cascata (`ON DELETE CASCADE`) para garantir a integridade referencial do banco.
 
-Os scripts SQL de criação estão disponíveis na pasta `sql` deste repositório.
+A implementação física do banco de dados foi realizada no SGBD PostgreSQL, utilizando a plataforma em nuvem **Supabase**. Foram criadas as 7 tabelas definidas no modelo lógico, com seus respectivos tipos de dados, restrições de integridade (`NOT NULL`, `UNIQUE`, `CHECK`) e chaves estrangeiras (`FOREIGN KEY`) configuradas com regras de exclusão e atualização em cascata (`ON DELETE CASCADE`) para garantir a integridade referencial. Os scripts SQL de criação estão disponíveis na pasta `sql` deste repositório.
 
 ### Evidências da Implementação no Supabase
-Abaixo estão as capturas de tela demonstrando a criação e a estrutura do banco no Supabase:
 
-![Visão Geral das Tabelas](images/supabase-tabelas/04-lista-tabelas.png)
+**Visão Geral do Banco de Dados no Table Editor:**
+![Visão Geral](images/supabase-tabelas/visao-geral.png.png)
+
+<details>
+<summary><b>👉 Clique aqui para expandir e ver todos os prints do passo a passo e da estrutura das tabelas</b></summary>
+<br>
+
+**Criação do Projeto no Supabase:**
+![Projeto Criado](images/supabase-tabelas/projeto.png.png)
+![Projeto Criado 2](images/supabase-tabelas/projeto2.png.png)
+![Projeto Criado 3](images/supabase-tabelas/projeto3.png.png)
+![Projeto Criado 4](images/supabase-tabelas/projeto4.png.png)
+![Projeto Criado 5](images/supabase-tabelas/projeto5.png.png)
+![Projeto Criado 6](images/supabase-tabelas/projeto6.png.png)
+
+**Execução do Script SQL:**
+![Script Executado](images/supabase-tabelas/02-script.png.png)
+
+**Lista de Tabelas Criadas:**
+![Lista de Tabelas](images/supabase-tabelas/lista-tabelas.png.png)
+![Lista de Tabelas 2](images/supabase-tabelas/lista-tabelas2.png.png)
+
+**Estrutura das Tabelas:**
+*Cliente:*
+![Estrutura Cliente](images/supabase-tabelas/estrutura-cliente.png.png)
+
+*Funcionário:*
+![Estrutura Funcionario](images/supabase-tabelas/estrutura-funcionario.png.png)
+
+*Categoria:*
+![Estrutura Categoria](images/supabase-tabelas/estrutura-categoria.png.png)
+
+*Produto:*
+![Estrutura Produto](images/supabase-tabelas/estrutura-produto.png.png)
+
+*Pedido:*
+![Estrutura Pedido](images/supabase-tabelas/estrutura-pedido.png.png)
+
+*Item Pedido:*
+![Estrutura Item Pedido](images/supabase-tabelas/estrutura-item-pedido.png.png)
+
+*Pagamento:*
+![Estrutura Pagamento](images/supabase-tabelas/estrutura-pagamento.png.png)
+
+</details>
 
 ## 5. Dados
 
