@@ -2,37 +2,34 @@
 
 ## 1. Cenário
 
-### 1.1 Descrição da empresa
-A **Uei Café** é uma cafeteria de médio porte localizada na região central de Franca/SP, com uma unidade única e cerca de 15 funcionários. A empresa atua no ramo de cafés especiais, oferecendo bebidas quentes e geladas, salgados, doces e produtos de conveniência. Seu público é composto majoritariamente por trabalhadores do entorno, estudantes e moradores da região. A cafeteria possui um programa de fidelidade simples: cada compra acumula pontos que podem ser trocados por produtos. Os pedidos podem ser feitos no balcão, para consumo no local ou para viagem, e o pagamento é realizado em dinheiro, cartão de crédito, débito ou Pix.
+### 1.1 Descrição da Empresa
+A **Uei Café** é uma cafeteria recém-inaugurada este ano, localizada nas dependências de um shopping center. O negócio é gerido por duas sócias e nasceu com um conceito inovador e diferenciado: oferecer opções que atendem tanto ao público *fitness* (com bebidas e comidas saudáveis, autorizadas e validadas por diversos nutricionistas) quanto ao público que aprecia doces e cafés especiais. A empresa tem ganhado destaque e um fluxo crescente de clientes devido a fortes parcerias e divulgações feitas por influenciadores digitais.
 
-### 1.2 Problema / necessidade
-Atualmente, a Uei Café controla suas operações com **planilhas manuais e cadernos de anotação**, o que gera diversos problemas:
-* **Perda de histórico de vendas** — não há registro confiável dos pedidos realizados.
-* **Dificuldade em controlar o cardápio** — preços e disponibilidade são atualizados manualmente, gerando erros.
-* **Programa de fidelidade inconsistente** — pontos são anotados em papel e frequentemente perdidos.
-* **Falta de controle sobre formas de pagamento** — não é possível saber qual meio de pagamento é mais usado.
-* **Ausência de integridade nos dados** — informações duplicadas de clientes e produtos são comuns.
+### 1.2 Problema / Necessidade
+Com o rápido crescimento desde a inauguração e a alta rotatividade de clientes (típica de shoppings), as sócias enfrentam dificuldades em gerenciar o negócio apenas com métodos manuais ou planilhas simples. Os principais problemas são:
+* **Perda de controle do público-alvo:** Dificuldade em mensurar quais produtos (fitness ou doces) vendem mais, impedindo uma gestão de estoque inteligente.
+* **Gestão do programa de fidelidade:** O acúmulo de pontos pelos clientes é feito manualmente, o que gera erros e insatisfação.
+* **Gargalo no atendimento:** Em horários de pico, o registro de pedidos e a conferência de pagamentos (dinheiro, cartão ou Pix) tornam-se lentos.
+* **Falta de visão estratégica:** As sócias não possuem relatórios claros sobre o faturamento por forma de pagamento ou o desempenho de cada funcionário.
 
-Diante desse cenário, a Uei Café precisa de um **banco de dados relacional** que centralize clientes, funcionários, produtos, pedidos, itens de pedido e pagamentos, garantindo integridade, consistência e suporte à geração de relatórios gerenciais.
+Para resolver essas questões e profissionalizar a gestão, a Uei Café necessita de um **banco de dados relacional** que centralize o cadastro de clientes, a gestão de equipe, o controle do cardápio (dividido por categorias), o registro ágil de pedidos, a emissão de pagamentos e o acompanhamento do programa de fidelidade.
 
 ### 1.3 Entidades e Atributos
-O sistema é composto por **7 entidades**. Para atender aos requisitos do modelo, os atributos foram classificados da seguinte forma:
-
-* **Entidades:** Cliente, Funcionario, Categoria, Produto, Pedido, ItemPedido e Pagamento.
+Para informatizar a Uei Café, o sistema foi modelado com **7 entidades**: *Cliente, Funcionario, Categoria, Produto, Pedido, ItemPedido e Pagamento*. O modelo atende a todas as classificações de atributos exigidas:
 * **Atributos Simples:** `nome`, `email`, `preco`, `status`, `cargo`, `salario`, entre outros.
 * **Atributos Compostos:** O endereço do cliente foi desmembrado em `end_rua`, `end_numero`, `end_bairro`, `end_cidade` e `end_cep`.
-* **Atributos Multivalorados:** O atributo `telefone` do cliente, pois um cliente pode ter mais de um número de contato.
-* **Atributos Derivados:** O `valor_total` do pedido (calculado a partir da soma dos itens) e os `pontos_fidelidade` do cliente (acumulados pelas compras).
-* **Chaves Primárias (PK):** Todas as tabelas possuem uma chave primária única (ex: `id_cliente`, `id_produto`, `id_pedido`).
+* **Atributos Multivalorados:** O atributo `telefone` do cliente, pois um cliente pode fornecer mais de um número de contato.
+* **Atributos Derivados:** O `valor_total` do pedido (calculado em tempo real a partir da soma dos itens) e os `pontos_fidelidade` do cliente (acumulados com base nas compras).
+* **Chaves Primárias (PK):** Todas as tabelas possuem um identificador único (ex: `id_cliente`, `id_pedido`).
 
 ### 1.4 Relacionamentos e Cardinalidades
-Para atender a todos os tipos de relacionamento exigidos, o modelo foi estruturado da seguinte forma:
+Para garantir a integridade das informações, os relacionamentos foram definidos para atender aos três tipos exigidos:
 * **Relacionamento 1:1 (Um para Um):** Um `Pedido` gera um único `Pagamento`, e um `Pagamento` pertence a um único `Pedido`.
-* **Relacionamentos 1:N (Um para Muitos):** 
+* **Relacionamentos 1:N (Um para Muitos):**
   * Um `Cliente` realiza vários `Pedidos`.
-  * Um `Funcionario` atende vários `Pedidos`.
+  * Um `Funcionario` (barista ou atendente) atende vários `Pedidos`.
   * Uma `Categoria` agrupa vários `Produtos`.
-* **Relacionamento N:N (Muitos para Muitos):** Um `Pedido` pode conter vários `Produtos`, e um `Produto` pode estar em vários `Pedidos`. Esse relacionamento é resolvido pela entidade associativa **`ItemPedido`**.
+* **Relacionamento N:N (Muitos para Muitos):** Um `Pedido` pode conter vários `Produtos` (ex: um café e um brownie fitness), e um `Produto` pode estar em vários `Pedidos`. Esse relacionamento é resolvido pela entidade associativa **`ItemPedido`**.
 
 *(Nota: A representação visual completa dessas entidades, atributos e relacionamentos pode ser conferida no DER na Seção 2).*
 
