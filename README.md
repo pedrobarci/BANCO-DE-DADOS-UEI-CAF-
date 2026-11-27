@@ -142,17 +142,17 @@ A inserção foi realizada via script SQL para garantir agilidade e consistênci
 ### Evidências do Povoamento
 Abaixo estão as capturas de tela demonstrando a execução dos scripts e a verificação da quantidade de dados:
 
-![Evidência de Dados 1](images/dados/dado-01.png)
-![Evidência de Dados 2](images/dados/dado-02.png)
-![Evidência de Dados 3](images/dados/dado-03.png)
-![Evidência de Dados 4](images/dados/dado-04.png)
-![Evidência de Dados 5](images/dados/dado-05.png)
-![Evidência de Dados 6](images/dados/dado-06.png)
-![Evidência de Dados 7](images/dados/dado-07.png)
-![Evidência de Dados 8](images/dados/dado-08.png)
-![Evidência de Dados 9](images/dados/dado-09.png)
-![Evidência de Dados 10](images/dados/dado-10.png)
-![Evidência de Dados 11](images/dados/dado-11.png)
+![Evidência de Dados 1](images/dados/dado-01.png.png)
+![Evidência de Dados 2](images/dados/dado-02.png.png)
+![Evidência de Dados 3](images/dados/dado-03.png.png)
+![Evidência de Dados 4](images/dados/dado-04.png.png)
+![Evidência de Dados 5](images/dados/dado-05.png.png)
+![Evidência de Dados 6](images/dados/dado-06.png.png)
+![Evidência de Dados 7](images/dados/dado-07.png.png)
+![Evidência de Dados 8](images/dados/dado-08.png.png)
+![Evidência de Dados 9](images/dados/dado-09.png.png)
+![Evidência de Dados 10](images/dados/dado-10.png.png)
+![Evidência de Dados 11](images/dados/dado-11.png.png)
 
 ## 6. CRUD
 Para demonstrar o funcionamento prático do banco de dados, foram realizadas as quatro operações fundamentais de manipulação de dados (CRUD) diretamente no ambiente do Supabase (SQL Editor).
