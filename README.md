@@ -158,7 +158,7 @@ Abaixo estão as capturas de tela demonstrando a execução dos scripts e a veri
 Para demonstrar o funcionamento prático do banco de dados, foram realizadas as quatro operações fundamentais de manipulação de dados (CRUD) diretamente no ambiente do Supabase (SQL Editor).
 
 ### 6.1 Create (Inserção)
-![Operação de Insert](images/crud/01-insert.png)
+![Operação de Insert](images/crud/01-select.png)
 
 ### 6.2 Read (Consulta)
 ![Operação de Select](images/crud/02-select.png)
