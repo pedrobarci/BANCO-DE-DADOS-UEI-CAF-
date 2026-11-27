@@ -133,4 +133,45 @@ Registra a forma e o valor pago de um pedido (Relacionamento 1:1 com Pedido).
 (em construção)
 
 ## 7. Relatórios
-(em construção)
+
+Foram desenvolvidas 10 consultas SQL avançadas para extrair informações gerenciais do banco de dados da Uei Café. Todas as consultas utilizam comandos como `SELECT`, `WHERE`, `JOIN`, `GROUP BY` e `ORDER BY`.
+
+### Relatório 1: Faturamento por forma de pagamento
+**Objetivo:** Identificar qual meio de pagamento gera mais receita.
+![Relatório 1](images/relatorios/consulta-01.png)
+
+### Relatório 2: Top 10 produtos mais vendidos
+**Objetivo:** Descobrir quais itens do cardápio têm maior saída.
+![Relatório 2](images/relatorios/consulta-02.png)
+
+### Relatório 3: Pedidos de alto valor
+**Objetivo:** Listar pedidos acima de R$ 100,00 e seus respectivos clientes.
+![Relatório 3](images/relatorios/consulta-03.png)
+
+### Relatório 4: Desempenho por funcionário
+**Objetivo:** Avaliar qual funcionário vendeu mais e quantos pedidos atendeu.
+![Relatório 4](images/relatorios/consulta-04.png)
+
+### Relatório 5: Produtos por categoria
+**Objetivo:** Listar os produtos pertencentes a uma categoria específica.
+![Relatório 5](images/relatorios/consulta-05.png)
+
+### Relatório 6: Clientes inativos
+**Objetivo:** Identificar clientes cadastrados que ainda não realizaram nenhum pedido.
+![Relatório 6](images/relatorios/consulta-06.png)
+
+### Relatório 7: Ticket médio por cidade
+**Objetivo:** Calcular o valor médio gasto por pedido em São Paulo.
+![Relatório 7](images/relatorios/consulta-07.png)
+
+### Relatório 8: Detalhamento de um pedido
+**Objetivo:** Mostrar todos os itens que compõem um pedido específico.
+![Relatório 8](images/relatorios/consulta-08.png)
+
+### Relatório 9: Cancelamentos por mês
+**Objetivo:** Acompanhar a evolução de pedidos cancelados mês a mês.
+![Relatório 9](images/relatorios/consulta-09.png)
+
+### Relatório 10: Top 3 categorias com maior faturamento
+**Objetivo:** Identificar quais tipos de produtos geram mais dinheiro.
+![Relatório 10](images/relatorios/consulta-10.png)
