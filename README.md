@@ -134,9 +134,25 @@ Abaixo estão as capturas de tela demonstrando a criação e a estrutura do banc
 ![Visão Geral das Tabelas](images/supabase-tabelas/04-lista-tabelas.png)
 
 ## 5. Dados
+
 Para a validação do banco de dados e realização de testes, o sistema foi populado com um volume significativo de dados coerentes com o cenário da cafeteria. Foram inseridos **500 registros em cada uma das 7 tabelas** (totalizando 3.500 registros), garantindo a unicidade das chaves primárias e o respeito às regras de negócio.
 
 A inserção foi realizada via script SQL para garantir agilidade e consistência. O script de povoamento está disponível em `sql/02_insert_dados.sql`.
+
+### Evidências do Povoamento
+Abaixo estão as capturas de tela demonstrando a execução dos scripts e a verificação da quantidade de dados:
+
+![Evidência de Dados 1](images/dados/dado-01.png)
+![Evidência de Dados 2](images/dados/dado-02.png)
+![Evidência de Dados 3](images/dados/dado-03.png)
+![Evidência de Dados 4](images/dados/dado-04.png)
+![Evidência de Dados 5](images/dados/dado-05.png)
+![Evidência de Dados 6](images/dados/dado-06.png)
+![Evidência de Dados 7](images/dados/dado-07.png)
+![Evidência de Dados 8](images/dados/dado-08.png)
+![Evidência de Dados 9](images/dados/dado-09.png)
+![Evidência de Dados 10](images/dados/dado-10.png)
+![Evidência de Dados 11](images/dados/dado-11.png)
 
 ### Evidências do Povoamento
 **Execução do script e contagem dos dados:**
