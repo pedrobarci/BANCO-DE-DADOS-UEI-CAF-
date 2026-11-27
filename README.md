@@ -154,11 +154,6 @@ Abaixo estão as capturas de tela demonstrando a execução dos scripts e a veri
 ![Evidência de Dados 10](images/dados/dado-10.png)
 ![Evidência de Dados 11](images/dados/dado-11.png)
 
-### Evidências do Povoamento
-**Execução do script e contagem dos dados:**
-![Execução do Script de Dados](images/dados/01-insert-executado.png)
-![Contagem de Registros](images/dados/02-contagem-tabelas.png)
-
 ## 6. CRUD
 Para demonstrar o funcionamento prático do banco de dados, foram realizadas as quatro operações fundamentais de manipulação de dados (CRUD) diretamente no ambiente do Supabase (SQL Editor).
 
